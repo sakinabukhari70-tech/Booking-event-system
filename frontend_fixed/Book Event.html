@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Event | EventHub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(120deg, #2575fc, #6a11cb);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #fff;
+    }
+
+    header {
+      width: 100%;
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header h1 {
+      font-size: 26px;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      margin: 0 15px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      padding: 40px 35px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      width: 400px;
+      text-align: center;
+      color: #fff;
+      margin-top: 80px;
+      transition: all 0.3s ease;
+    }
+
+    .container:hover {
+      transform: translateY(-3px);
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .input-box {
+      margin: 15px 0;
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+      color: #eee;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+      font-size: 15px;
+      color: #333;
+    }
+
+    textarea {
+      resize: none;
+      height: 70px;
+    }
+
+    button {
+      width: 100%;
+      background: #ffd700;
+      border: none;
+      color: #333;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #fff;
+      transform: scale(1.05);
+    }
+
+    #response {
+      margin-top: 10px;
+      font-size: 16px;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    footer {
+      margin-top: 60px;
+      padding: 15px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.1);
+      width: 100%;
+      color: #eee;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: 85%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎉 EventHub</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="Book Event.html">Book Event</a>
+      <a href="About.html">About</a>
+      <a href="Contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>Book Your Event 🎉</h2>
+    <form id="bookForm">
+      <div class="input-box">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Enter your full name" required />
+      </div>
+
+      <div class="input-box">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="Enter your email" required />
+      </div>
+
+      <div class="input-box">
+        <label for="eventType">Select Event</label>
+        <select id="eventType" required>
+          <option value="">-- Choose an Event --</option>
+          <option value="concert">Music Concert</option>
+          <option value="art">Art Exhibition</option>
+          <option value="sports">Sports Tournament</option>
+          <option value="movie">Movie Premiere</option>
+        </select>
+      </div>
+
+      <div class="input-box">
+        <label for="tickets">Number of Tickets</label>
+        <input type="number" id="tickets" placeholder="Enter number of tickets" required min="1" />
+      </div>
+
+      <div class="input-box">
+        <label for="message">Additional Notes</label>
+        <textarea id="message" placeholder="Write any special requests..."></textarea>
+      </div>
+
+      <button type="submit">Confirm Booking</button>
+    </form>
+    <p id="response"></p>
+  </div>
+
+  <footer>
+    <p>© 2025 EventHub | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('bookForm');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault(); // stop reload
+
+      const data = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        eventType: document.getElementById('eventType').value,
+        tickets: document.getElementById('tickets').value,
+        message: document.getElementById('message').value
+      };
+
+      const responseEl = document.getElementById('response');
+      responseEl.textContent = "⏳ Booking in progress...";
+      responseEl.style.color = "#ffd700";
+
+      try {
+        const res = await fetch('http://localhost:5000/api/bookevent', { // ✅ backend route
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+
+        if (res.ok) {
+          responseEl.textContent = "✅ Event booked successfully!";
+          responseEl.style.color = "lightgreen";
+          form.reset();
+        } else {
+          responseEl.textContent = "❌ Failed to book event. Try again.";
+          responseEl.style.color = "red";
+        }
+      } catch (error) {
+        responseEl.textContent = "⚠️ Server error. Please check backend.";
+        responseEl.style.color = "orange";
+      }
+    });
+  </script>
+</body>
+</html>

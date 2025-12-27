@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EventHub - Book Your Next Event</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(120deg, #6a11cb 0%, #2575fc 100%);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    header {
+      width: 100%;
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+    }
+
+    header h1 {
+      font-size: 26px;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      margin: 0 15px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    .hero {
+      text-align: center;
+      margin-top: 100px;
+      max-width: 700px;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      line-height: 1.3;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+    }
+
+    .hero button {
+      background: #ffd700;
+      color: #333;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+
+    .hero button:hover {
+      background: #fff;
+      transform: scale(1.05);
+    }
+
+    .events {
+      margin-top: 80px;
+      width: 80%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .event-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      transition: 0.4s;
+      backdrop-filter: blur(10px);
+    }
+
+    .event-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .event-card img {
+      width: 100%;
+      border-radius: 12px;
+      height: 160px;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    .event-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+    .event-card p {
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+    }
+
+    .event-card a {
+      text-decoration: none;
+      background: #ffd700;
+      color: #333;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .event-card a:hover {
+      background: #fff;
+    }
+
+    footer {
+      margin-top: 60px;
+      padding: 20px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.1);
+      width: 100%;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+      color: #eee;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎉 EventHub</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="Book Event.html">Book Event</a>
+      <a href="About.html">About</a>
+      <a href="Contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Find and Book the Best Events Around You</h2>
+    <p>From concerts to workshops, sports to exhibitions — experience the best with EventHub.</p>
+    <a href="book.html"><button>Book Now</button></a>
+  </section>
+
+  <section class="events">
+    <div class="event-card">
+      <img src="The excitement of World Singing Day with this….jpeg" alt="Music Event" />
+      <h3>🎵 Music Concert</h3>
+      <p>Enjoy live performances by your favorite artists in an unforgettable night!</p>
+      <a href="book.html">Book</a>
+    </div>
+
+    <div class="event-card">
+      <img src="undefined (2).jpeg" alt="Art Exhibition" />
+      <h3>🎨 Art Exhibition</h3>
+      <p>Explore stunning artworks and meet creative minds at the annual art fest.</p>
+      <a href="book.html">Book</a>
+    </div>
+
+    <div class="event-card">
+      <img src="undefined (1).jpeg" alt="Movie Night" />
+      <h3>🎬 Movie Premiere</h3>
+      <p>Be the first to watch the latest blockbuster at our exclusive premiere event.</p>
+      <a href="book.html">Book</a>
+    </div>
+
+    <div class="event-card">
+      <img src="undefined.jpeg" alt="Sports Event" />
+      <h3>🏏 Sports Tournament</h3>
+      <p>Feel the adrenaline rush in live stadium action — book your seats today!</p>
+      <a href="book.html">Book</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 EventHub | All Rights Reserved</p>
+  </footer>
+</body>
+</html>

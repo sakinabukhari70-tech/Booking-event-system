@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | EventHub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(120deg, #6a11cb, #2575fc);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      width: 100%;
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header h1 {
+      font-size: 26px;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      margin: 0 15px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    .about-hero {
+      text-align: center;
+      margin-top: 80px;
+      max-width: 900px;
+    }
+
+    .about-hero h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      font-weight: 700;
+      color: #ffd700;
+    }
+
+    .about-hero p {
+      font-size: 17px;
+      line-height: 1.8;
+      color: #f0f0f0;
+      margin-bottom: 30px;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-bottom: 50px;
+    }
+
+    .stat {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 25px;
+      border-radius: 15px;
+      width: 200px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .stat:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-5px);
+    }
+
+    .stat h3 {
+      font-size: 28px;
+      color: #ffd700;
+    }
+
+    .stat p {
+      color: #fff;
+      font-size: 15px;
+      margin-top: 5px;
+    }
+
+    .mission-section, .story-section, .team-section {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 40px;
+      margin: 20px 0;
+      max-width: 900px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      transition: 0.3s;
+    }
+
+    .mission-section:hover, .story-section:hover, .team-section:hover {
+      transform: translateY(-3px);
+    }
+
+    .mission-section h2,
+    .story-section h2,
+    .team-section h2 {
+      color: #ffd700;
+      margin-bottom: 20px;
+      font-size: 28px;
+      font-weight: 600;
+    }
+
+    .mission-section p, .story-section p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #f0f0f0;
+    }
+
+    .team {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      margin-top: 20px;
+    }
+
+    .member {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 15px;
+      width: 200px;
+      text-align: center;
+      padding: 20px;
+      transition: 0.3s;
+    }
+
+    .member:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: scale(1.05);
+    }
+
+    .member img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      border: 3px solid #ffd700;
+    }
+
+    .member h4 {
+      font-size: 16px;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .member p {
+      font-size: 13px;
+      color: #ddd;
+    }
+
+    footer {
+      margin-top: 60px;
+      padding: 15px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.1);
+      width: 100%;
+      color: #eee;
+    }
+
+    @media (max-width: 768px) {
+      .mission-section, .story-section, .team-section {
+        width: 85%;
+        padding: 30px;
+      }
+      .about-hero h2 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎉 EventHub</h1>
+    <nav>
+     <a href="index.html">Home</a>
+      <a href="Book Event.html">Book Event</a>
+      <a href="About.html">About</a>
+      <a href="Contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="about-hero">
+    <h2>About EventHub</h2>
+    <p>At <b>EventHub</b>, we believe every event is more than a gathering — it’s an experience. From music concerts to tech conferences, we make discovering and booking events effortless and exciting. Our platform connects thousands of users with memorable experiences every day.</p>
+  </section>
+
+  <div class="stats">
+    <div class="stat">
+      <h3>10K+</h3>
+      <p>Events Hosted</p>
+    </div>
+    <div class="stat">
+      <h3>500K+</h3>
+      <p>Tickets Sold</p>
+    </div>
+    <div class="stat">
+      <h3>100+</h3>
+      <p>Partner Venues</p>
+    </div>
+    <div class="stat">
+      <h3>50+</h3>
+      <p>Team Members</p>
+    </div>
+  </div>
+
+  <section class="mission-section">
+    <h2>Our Mission</h2>
+    <p>To simplify the event discovery and booking process by providing a smart, fast, and secure platform that connects people to the experiences they love. We’re passionate about innovation, creativity, and making every moment count — because your joy is our success.</p>
+  </section>
+
+  <section class="story-section">
+    <h2>Our Story</h2>
+    <p>EventHub began as a small idea in 2020 when a group of event enthusiasts wanted to make booking events simpler. What started as a student project evolved into a leading event management platform. Today, we proudly serve thousands of event organizers and millions of users globally — helping make dreams come alive one event at a time.</p>
+  </section>
+
+  <section class="team-section">
+    <h2>Meet Our Team</h2>
+    <div class="team">
+      <div class="member">
+        <img src="https://i.pravatar.cc/100?img=12" alt="Sarah">
+        <h4>Saif</h4>
+        <p>Founder & CEO</p>
+      </div>
+      <div class="member">
+        <img src="https://i.pravatar.cc/100?img=15" alt="Ahmad">
+        <h4>Ahmad Khan</h4>
+        <p>Lead Developer</p>
+      </div>
+      <div class="member">
+        <img src="https://i.pravatar.cc/100?img=18" alt="Fatima">
+        <h4>Ali</h4>
+        <p>UI/UX Designer</p>
+      </div>
+      <div class="member">
+        <img src="https://i.pravatar.cc/100?img=20" alt="Ali">
+        <h4>Mehak</h4>
+        <p>Marketing Head</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 EventHub | Crafted with ❤️ for event lovers worldwide</p>
+  </footer>
+</body>
+</html>
+
